@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "Game_Cities.h"
 
 TEST(GameCitiesTest, Creation) {
     Game_Cities* game = new Game_Cities();
