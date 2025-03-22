@@ -17,6 +17,6 @@ TEST(GameCitiesTest, LoadCities) {
 TEST(GameCitiesTest, IsCityValid) {
     Game_Cities game;
     game.loadCities("cities.txt");
-    ASSERT_TRUE(game.isCityValid("Москва"));
-    ASSERT_FALSE(game.isCityValid("НесуществующийГород"));
+    ASSERT_TRUE(game.isCityValid(game.toUTF8(L"Москва")));
+    ASSERT_FALSE(game.isCityValid(game.toUTF8(L"НесуществующийГород")));
 }
