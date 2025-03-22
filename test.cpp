@@ -6,3 +6,10 @@ TEST(GameCitiesTest, Creation) {
     ASSERT_NE(game, nullptr);
     delete game;
 }
+
+TEST(GameCitiesTest, LoadCities) {
+    Game_Cities game;
+    game.loadCities("cities.txt");
+   
+    ASSERT_GT(game.getCityCount(), 0);
+}
