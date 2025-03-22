@@ -28,6 +28,7 @@ public:
         }
         file.close();
     }
+
     size_t getCityCount() const { return cities.size(); }
 };
 

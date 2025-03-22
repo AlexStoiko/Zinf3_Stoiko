@@ -13,3 +13,10 @@ TEST(GameCitiesTest, LoadCities) {
    
     ASSERT_GT(game.getCityCount(), 0);
 }
+
+TEST(GameCitiesTest, IsCityValid) {
+    Game_Cities game;
+    game.loadCities("cities.txt");
+    ASSERT_TRUE(game.isCityValid("Москва"));
+    ASSERT_FALSE(game.isCityValid("НесуществующийГород"));
+}
