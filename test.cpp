@@ -20,3 +20,9 @@ TEST(GameCitiesTest, IsCityValid) {
     ASSERT_TRUE(game.isCityValid(game.toUTF8(L"Москва")));
     ASSERT_FALSE(game.isCityValid(game.toUTF8(L"НесуществующийГород")));
 }
+
+TEST(GameCitiesTest, IsCorrectNextCity) {
+    Game_Cities game;
+    ASSERT_TRUE(game.isCorrectNextCity("Москва", "Астрахань"));
+    ASSERT_FALSE(game.isCorrectNextCity("Москва", "Воронеж"));
+}
