@@ -81,5 +81,9 @@ public:
         return find(citiesUsed.begin(), citiesUsed.end(), city) != citiesUsed.end();
     }
 
+    void addCityToUsedList(const string& city) {
+        citiesUsed.push_back(city);
+    }
+
 };
 
