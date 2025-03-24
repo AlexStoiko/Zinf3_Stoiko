@@ -85,5 +85,14 @@ public:
         citiesUsed.push_back(city);
     }
 
+    bool proceedToNextCity(const string& newCity) {
+        if (isCorrectNextCity(currentCity, newCity) && !hasCityBeenUsed(newCity)) {
+            currentCity = newCity;
+            addCityToUsedList(newCity);
+            return true;
+        }
+        return false;
+    }
+
 };
 
