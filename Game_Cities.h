@@ -58,5 +58,12 @@ public:
         return false;
     }
 
+    bool isCorrectNextCity(const string& prevCity, const string& newCity) {
+        if (prevCity.empty() || newCity.empty()) return false;
+        char lastChar = prevCity.back() - 32;
+        char firstChar = newCity.front();
+        return lastChar == firstChar;
+    }
+
 };
 
