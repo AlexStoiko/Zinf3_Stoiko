@@ -49,3 +49,13 @@ TEST(GameCitiesTest, AddCityToUsedList) {
     ASSERT_TRUE(game.hasCityBeenUsed("Москва"));
     ASSERT_FALSE(game.hasCityBeenUsed("Воронеж"));
 }
+
+TEST(GameCitiesTest, ProceedToNextCity) {
+    Game_Cities game;
+    game.loadCities("cities.txt");
+    game.startGame("Москва");
+
+    ASSERT_TRUE(game.proceedToNextCity("Астрахань"));
+    ASSERT_EQ(game.getCurrentCity(), "Астрахань");
+    ASSERT_FALSE(game.proceedToNextCity("Воронеж"));
+}
