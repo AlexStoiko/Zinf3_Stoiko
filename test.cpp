@@ -33,3 +33,12 @@ TEST(GameCitiesTest, StartGame) {
     game.startGame("Москва");
     ASSERT_EQ(game.getCurrentCity(), "Москва");
 }
+
+TEST(GameCitiesTest, HasCityBeenUsed) {
+    Game_Cities game;
+    game.loadCities("cities.txt");
+    game.startGame("Москва");
+
+    ASSERT_TRUE(game.hasCityBeenUsed("Москва"));
+    ASSERT_FALSE(game.hasCityBeenUsed("Астрахань"));
+}
