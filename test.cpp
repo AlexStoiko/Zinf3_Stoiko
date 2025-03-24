@@ -26,3 +26,10 @@ TEST(GameCitiesTest, IsCorrectNextCity) {
     ASSERT_TRUE(game.isCorrectNextCity("Москва", "Астрахань"));
     ASSERT_FALSE(game.isCorrectNextCity("Москва", "Воронеж"));
 }
+
+TEST(GameCitiesTest, StartGame) {
+    Game_Cities game;
+    game.loadCities("cities.txt");
+    game.startGame("Москва");
+    ASSERT_EQ(game.getCurrentCity(), "Москва");
+}
