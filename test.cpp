@@ -42,3 +42,10 @@ TEST(GameCitiesTest, HasCityBeenUsed) {
     ASSERT_TRUE(game.hasCityBeenUsed("Москва"));
     ASSERT_FALSE(game.hasCityBeenUsed("Астрахань"));
 }
+
+TEST(GameCitiesTest, AddCityToUsedList) {
+    Game_Cities game;
+    game.addCityToUsedList("Москва");
+    ASSERT_TRUE(game.hasCityBeenUsed("Москва"));
+    ASSERT_FALSE(game.hasCityBeenUsed("Воронеж"));
+}
