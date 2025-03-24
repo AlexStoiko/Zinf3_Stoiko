@@ -76,5 +76,10 @@ public:
     string getCurrentCity() {
         return currentCity;
     }
+
+    bool hasCityBeenUsed(const string& city) {
+        return find(citiesUsed.begin(), citiesUsed.end(), city) != citiesUsed.end();
+    }
+
 };
 
