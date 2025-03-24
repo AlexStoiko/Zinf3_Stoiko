@@ -13,6 +13,8 @@ class Game_Cities
 {
 private:
     vector<string> cities;
+    vector<string> citiesUsed;
+    string currentCity;
 public:
     Game_Cities() {};
 
@@ -65,5 +67,14 @@ public:
         return lastChar == firstChar;
     }
 
+    void startGame(const string& firstCity) {
+        currentCity = firstCity;
+        citiesUsed.clear();
+        citiesUsed.push_back(firstCity);
+    }
+
+    string getCurrentCity() {
+        return currentCity;
+    }
 };
 
