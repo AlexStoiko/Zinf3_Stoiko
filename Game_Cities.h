@@ -61,6 +61,10 @@ public:
         return currentCity;
     }
 
+    const vector<string>& getCities() const {
+        return cities;
+    }
+
     bool hasCityBeenUsed(const string& city) {
         return find(citiesUsed.begin(), citiesUsed.end(), city) != citiesUsed.end();
     }
