@@ -59,3 +59,13 @@ TEST(GameCitiesTest, ProceedToNextCity) {
     ASSERT_EQ(game.getCurrentCity(), "Астрахань");
     ASSERT_FALSE(game.proceedToNextCity("Воронеж"));
 }
+
+TEST(GameCitiesTest, GetComputerMove) {
+    Game_Cities game;
+    game.loadCities("cities.txt");
+    game.startGame("Москва");
+
+    string computerMove = game.getComputerMove();
+    ASSERT_FALSE(computerMove.empty());
+    ASSERT_TRUE(game.isCorrectNextCity("Москва", computerMove));
+}
