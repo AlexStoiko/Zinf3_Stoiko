@@ -78,4 +78,14 @@ public:
         return false;
     }
 
+    string getComputerMove() {
+        char lastChar = currentCity.back();
+        for (const auto& city : cities) {
+            if (!hasCityBeenUsed(city) && city.front() == lastChar - 32) {
+                return city;
+            }
+        }
+        return "";
+    }
+
 };
